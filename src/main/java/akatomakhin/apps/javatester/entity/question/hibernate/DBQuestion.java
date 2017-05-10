@@ -5,6 +5,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "question", schema = "javatester")
@@ -15,7 +17,7 @@ public class DBQuestion {
     @Column(name = "question")
     private String question;
     @Column(name = "answer")
-    private String answer;
+    private List<String> answers = new ArrayList<String>();
 
     public int getId() {
         return id;
@@ -33,11 +35,11 @@ public class DBQuestion {
         this.question = question;
     }
 
-    public String getAnswer() {
-        return answer;
+    public List<String> getAnswers() {
+        return answers;
     }
 
-    public void setAnswer(String answer) {
-        this.answer = answer;
+    public void setAnswers(List<String> answers) {
+        this.answers = answers;
     }
 }

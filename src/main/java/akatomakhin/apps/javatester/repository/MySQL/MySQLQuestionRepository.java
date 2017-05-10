@@ -4,6 +4,8 @@ package akatomakhin.apps.javatester.repository.MySQL;
 import akatomakhin.apps.javatester.repository.QuestionRepositoryInterface;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class MySQLQuestionRepository {
     private QuestionRepositoryInterface questionRepository;
@@ -16,7 +18,7 @@ public class MySQLQuestionRepository {
         return questionRepository.findOne(id).getQuestion();
     }
 
-    public String getAnswer(int id){
-        return questionRepository.findOne(id).getAnswer();
+    public List<String> getAnswer(int id){
+        return questionRepository.findOne(id).getAnswers();
     }
 }

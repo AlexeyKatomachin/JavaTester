@@ -30,10 +30,6 @@ public class JavaTesterFacade {
     }
 
     public boolean getAnswer(Answer answer){
-        if (mySQLQuestionRepository.getAnswer(mySQLParagraphRepository.getID(answer.getTitle()))==answer.getAnswer()){
-            return true;
-        }else {
-            return false;
-        }
+        return answer.equals(mySQLQuestionRepository.getAnswer(mySQLParagraphRepository.getID(answer.getTitle())));
     }
 }
